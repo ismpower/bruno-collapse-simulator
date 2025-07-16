@@ -1,0 +1,73 @@
+{
+  "session_summary": {
+    "environment_setup": {
+      "conda_env": "bruno-simulator-env",
+      "key_packages": ["numpy", "matplotlib", "cupy (GPU)", "pandas", "jupyterlab"]
+    },
+    "repository_structure": [
+      "bruno-collapse-unified/         ← original unified codebase",
+      "bruno_sim_1_entropy_vs_radius.py ← first simulation script",
+      "results/                         ← output directory for CSVs & plots",
+      "scripts/                         ← helper scripts",
+      "README.md",
+      ".gitignore"
+    ],
+    "git": {
+      "ignored": ["results/", "env files", "large binaries", "logs"],
+      "push_error": "no 'main' branch – fixed by verifying branch name"
+    },
+    "first_simulation": {
+      "script": "bruno_sim_1_entropy_vs_radius.py",
+      "features": [
+        "CLI args (--min-radius, --max-radius, --num-points, --output-dir)",
+        "computes S_volume, S_surface, K_bruno over r",
+        "finds collapse threshold (K_bruno=1)",
+        "saves entropy_vs_radius.csv",
+        "plots and saves PNG"
+      ],
+      "GPU_acceleration": {
+        "cupy": "switched NumPy→CuPy automatically if available",
+        "fallback": "NumPy on CPU",
+        "installation_troubleshooting": [
+          "uninstalled conflicting cupy packages",
+          "failed to install cudatoolkit 12.x via conda",
+          "resolved by using existing libnvrtc.so in conda env"
+        ]
+      }
+    },
+    "interactive_notebook": {
+      "name": "entropy-collapse-transient-engine.ipynb",
+      "cells": [
+        "Markdown title and description",
+        "Imports + `import os` + GPU detection",
+        "Constants (hbar, G, c, kB, l_P, κ)",
+        "Grid/time setup for transient collapse",
+        "Compute β_B(t), P_eff(t), Φ_nu(t)",
+        "Locate t_collapse where β_B ≥ 1",
+        "Plot time series (β_B, P_norm, Φ_norm)",
+        "Save time_series.csv via pandas"
+      ],
+      "fixes": [
+        "added `import os` to cell 2",
+        "converted CuPy arrays to NumPy with `xp.asnumpy(...)`",
+        "cast indices/scalars to Python types (`int()`, `float()`) before plotting"
+      ]
+    },
+    "results": {
+      "static": {
+        "entropy_vs_radius.csv": "radius, K_bruno, S_vol, S_surf over Planck‐unit range",
+        "bruno_constant_threshold_plot.png": "threshold plot"
+      },
+      "transient": {
+        "time_series.csv": "t, β_B, P_norm, Φ_norm",
+        "collapse_time": "t ≈ 0.000 s in current parameters"
+      }
+    },
+    "next_steps": [
+      "Build large‐scale transient engine to stress GPU",
+      "Animate collapse in notebook",
+      "Extend to 2D/3D GR‐style simulation",
+      "Incorporate real astrophysical data"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "notebook": "Notebook #2 (EoS integration)",
+  "summary": "Implements a GPU-accelerated interpolation engine for tabulated nuclear matter EoS data.",
+  "features": [
+    "✅ Parses external EoS table with columns: nB [fm⁻³], T [MeV], P [MeV/fm³], ε [MeV], cₛ² [dimensionless]",
+    "✅ Wraps physical units using astropy (optional)",
+    "✅ Builds scattered 2D interpolators using scipy.interpolate.LinearNDInterpolator",
+    "✅ Generates GPU-resident (nB, T) grids with CuPy",
+    "✅ Filters grid to convex hull using Delaunay to prevent NaN results",
+    "✅ Interpolates physical fields (P, ε, cₛ²) with fallback clamping and safety",
+    "✅ Defines eos_query(nB, T) interface for programmatic use",
+    "✅ Optionally clips cₛ² to be ≥ 1e-8 for numerical stability",
+    "✅ Includes plotting and validation tools for domain and result inspection"
+  ],
+  "status": "Finalized for integration and reuse",
+  "next_steps": [
+    "Optionally export eos_query() to eos_tools.py as a module",
+    "Notebook #3: Use this EoS in dynamic simulations (e.g. beta_B collapse)",
+    "Add Ye dimension or full 3D interpolation if EoS table supports it",
+    "Enable vectorized time-evolution trajectories or GPU-resident batches"
+  ],
+  "validation": {
+    "example_query": {
+      "input": {
+        "nB": 0.26,
+        "T": 0.5
+      },
+      "output": {
+        "P": -0.00057695,
+        "unit": "MeV/fm³",
+        "interpretation": "cold, over-compressed regime with negative pressure"
+      }
+    },
+    "interpolation_domain": {
+      "method": "Delaunay convex hull in (nB, T)",
+      "safety": "points outside return NaN or can be clamped"
+    }
+  },
+  "tools_used": [
+    "NumPy",
+    "SciPy (LinearNDInterpolator, Delaunay)",
+    "CuPy",
+    "Astropy (units)",
+    "Matplotlib"
+  ],
+  "interface": {
+    "function": "eos_query(nB, T, safe_mode=True)",
+    "returns": {
+      "P": "pressure [MeV/fm³]",
+      "eps": "specific energy [MeV]",
+      "cs2": "sound speed squared [dimensionless ≥ 1e-8]"
+    }
+  }
+}

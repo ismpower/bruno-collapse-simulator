@@ -1,0 +1,57 @@
+{
+  "notebook": "Notebook #3: EoS-Driven Core-Collapse Simulation",
+  "description": "Implements a realistic core-collapse simulation using Lattimer-Swesty EoS data, tracks baryon pressure, energy density, entropy, luminosity and neutrino output, with GPU support.",
+  "structure": [
+    {
+      "cell": 2,
+      "type": "code",
+      "purpose": "Detect and configure NumPy or CuPy depending on GPU availability"
+    },
+    {
+      "cell": 3,
+      "type": "code",
+      "purpose": "Placeholder eos_query used during development"
+    },
+    {
+      "cell": 4,
+      "type": "code",
+      "purpose": "Define physical constants and set simulation domain/time grid"
+    },
+    {
+      "cell": 5,
+      "type": "code",
+      "purpose": "Main simulation loop: evaluates time-varying nB, T, then queries EoS for P, eps, cs2, calculates beta_B, stores all in series"
+    },
+    {
+      "cell": 6,
+      "type": "code",
+      "purpose": "Plot time evolution of beta_B, pressure, and energy density. Collapse onset is marked"
+    },
+    {
+      "cell": 7,
+      "type": "code",
+      "purpose": "(Extended) Compute entropy per baryon and density using analytical approximation"
+    },
+    {
+      "cell": 8,
+      "type": "code",
+      "purpose": "Plot all EoS quantities including entropy to visualize detailed core behavior"
+    },
+    {
+      "cell": 9,
+      "type": "code",
+      "purpose": "Compute neutrino-related quantities: instantaneous luminosity L, flux Phi_nu, heating rate Qdot_nu using derived expressions"
+    },
+    {
+      "cell": 10,
+      "type": "code",
+      "purpose": "Plot neutrino outputs (Phi_nu, Qdot_nu) over time"
+    },
+    {
+      "cell": "Markdown",
+      "type": "markdown",
+      "purpose": "Document method, assumptions, and results at each major milestone"
+    }
+  ],
+  "instructions": "Ensure cells are clearly labeled and logically ordered. One functional pass per feature—no trial/debug code. Maintain a clean simulation loop with append-only series buffers for time-resolved physical quantities. Export results to CSV or JSON for cross-notebook analysis."
+}

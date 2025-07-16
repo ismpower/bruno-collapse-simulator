@@ -1,0 +1,72 @@
+File,Axes,Step,Label
+20ja074_fig06a_data.h5,axes_47022283280936,step_1,HL
+20ja074_fig06a_data.h5,axes_47022283280936,step_2,Core RC
+20ja074_fig06a_data.h5,axes_47022283280936,step_3,Rotating ML
+20ja074_fig06b_data.h5,axes_47022185709336,step_1,$\alpha$=0.05
+20ja074_fig06b_data.h5,axes_47022185709336,step_2,$\alpha$=0.25
+20ja074_fig06b_data.h5,axes_47022185709336,step_3,$\alpha$=0.45
+20ja074_fig06b_data.h5,axes_47022185709336,step_4,$\alpha$=0.65
+20ja074_fig06b_data.h5,axes_47022185709336,step_5,$\alpha$=0.85
+20ja074_fig05_data.h5,axes_47022215120912,step_1,prob
+20ja074_fig08a_data.h5,axes_47022266317320,step_1,A
+20ja074_fig08a_data.h5,axes_47022266317320,step_2,B
+20ja074_fig08a_data.h5,axes_47022266317320,step_3,C
+20ja074_fig08a_data.h5,axes_47022266317320,step_4,D
+20ja074_fig08a_data.h5,axes_47022293683200,step_1,A
+20ja074_fig08a_data.h5,axes_47022293683200,step_2,B
+20ja074_fig08a_data.h5,axes_47022293683200,step_3,C
+20ja074_fig08a_data.h5,axes_47022293683200,step_4,D
+20ja074_fig07_data.h5,axes_47787012204464,step_1,Mahalanobis RBF
+20ja074_fig07_data.h5,axes_47787012204464,step_2,Euclidean RBF
+20ja074_fig07_data.h5,axes_47787012204464,step_3,k-NN
+20ja074_fig09_data.h5,axes_47022267107848,step_2,FPR = 65%
+20ja074_fig09_data.h5,axes_47022267107848,step_4,FPR = 16%
+20ja074_fig03_data.h5,axes_47022293309672,step_1,prob
+20ja074_fig01b_data.h5,axes_47019911289640,step_1,$n_e\ [2\cdot10^{19}\ m^{-3}]$
+20ja074_fig01b_data.h5,axes_47019911289640,step_2,$I_p$ [MA]
+20ja074_fig01b_data.h5,axes_47019911289640,step_3,$\beta_n$
+20ja074_fig01b_data.h5,axes_47019911289640,step_4,$I_{prog}$ [MA]
+20ja074_fig01b_data.h5,axes_47022258276008,step_1,LM
+20ja074_fig01b_data.h5,axes_47022258276008,step_2,n=1 MHD
+20ja074_fig01b_data.h5,axes_47022279600864,step_1,$T_e$ peaking
+20ja074_fig01b_data.h5,axes_47022279600864,step_2,$n_e$ peaking
+20ja074_fig01b_data.h5,axes_47022279600864,step_3,$D_\alpha$ (a.u)
+20ja074_fig04a_data.h5,axes_47022271956288,step_1,prob
+20ja074_fig04a_data.h5,axes_47022357759152,step_1,$T_e$
+20ja074_fig04a_data.h5,axes_47022357759152,step_2,$n_e$
+20ja074_fig04a_data.h5,axes_47022357996144,step_1,$T_{e0}$ [keV]
+20ja074_fig04a_data.h5,axes_47022357996144,step_2,$n_{e0} [10^{19} m^{-3}]$
+20ja074_fig04a_data.h5,axes_47022357996144,step_3,$10^2 kJ$
+20ja074_fig04a_data.h5,axes_47022380602328,step_1,$P_{input} [MW]$
+20ja074_fig04a_data.h5,axes_47022380602328,step_2,$P_{rad}/P_{input}$
+20ja074_fig04b_data.h5,axes_47022257998704,step_1,n=1 MHD
+20ja074_fig04b_data.h5,axes_47022257998704,step_2,n=2 MHD
+20ja074_fig04b_data.h5,axes_47022413137288,step_1,prob
+20ja074_fig02b_data.h5,axes_47022263101600,step_1,n=1 MHD
+20ja074_fig02b_data.h5,axes_47022263101600,step_2,n=2 MHD
+20ja074_fig02b_data.h5,axes_47022263102392,step_1,prob
+20ja074_fig02a_data.h5,axes_47022186796064,step_1,$T_e$
+20ja074_fig02a_data.h5,axes_47022186796064,step_2,$n_e$
+20ja074_fig02a_data.h5,axes_47022268022120,step_1,$P_{input} [MW]$
+20ja074_fig02a_data.h5,axes_47022268022120,step_2,$P_{rad}/P_{input}$
+20ja074_fig02a_data.h5,axes_47022278043736,step_1,$T_{e0} [keV]$
+20ja074_fig02a_data.h5,axes_47022278043736,step_2,$n_{e0} [10^{19} m^{-3}]$
+20ja074_fig02a_data.h5,axes_47022278043736,step_3,$W_{mhd} [10^2 kJ]$
+20ja074_fig02a_data.h5,axes_47022278043808,step_1,prob
+20ja074_fig01a_data.h5,axes_47022266461544,step_1,$n_e\ [2\cdot10^{19}\ m^{-3}]$
+20ja074_fig01a_data.h5,axes_47022266461544,step_2,$I_p$ [MA]
+20ja074_fig01a_data.h5,axes_47022266461544,step_3,$\beta_n$
+20ja074_fig01a_data.h5,axes_47022266461544,step_4,$I_{prog}$ [MA]
+20ja074_fig01a_data.h5,axes_47022274944216,step_1,LM
+20ja074_fig01a_data.h5,axes_47022274944216,step_2,n=1 MHD
+20ja074_fig01a_data.h5,axes_47022283018504,step_1,$T_e$ peaking
+20ja074_fig01a_data.h5,axes_47022283018504,step_2,$n_e$ peaking
+20ja074_fig01a_data.h5,axes_47022283018504,step_3,$D_\alpha$ (a.u)
+20ja074_fig08b_data.h5,axes_47022275896712,step_1,A
+20ja074_fig08b_data.h5,axes_47022275896712,step_2,B
+20ja074_fig08b_data.h5,axes_47022275896712,step_3,C
+20ja074_fig08b_data.h5,axes_47022275896712,step_4,D
+20ja074_fig08b_data.h5,axes_47022289599272,step_1,A
+20ja074_fig08b_data.h5,axes_47022289599272,step_2,B
+20ja074_fig08b_data.h5,axes_47022289599272,step_3,C
+20ja074_fig08b_data.h5,axes_47022289599272,step_4,D

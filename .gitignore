@@ -1,0 +1,45 @@
+# === EXCLUDE: Bruno legacy repo (already available separately)
+bruno-collapse-unified/
+
+# === EXCLUDE: heavy sim result dumps
+scripts/sim_results/
+scripts/results/
+scripts/frames/
+
+# === INCLUDE: keep scripts/core*.py and tools
+!scripts/*.py
+!scripts/download_*.py
+!scripts/eos_tools.py
+
+# === EXCLUDE: large EOS table (blocked by GitHub)
+data/eos_tables/lattimer_swesty_220L.dat
+
+# === EXCLUDE: auto-generated or large data chunks
+results/sim1/
+results/sim_transient/
+results/*.zip
+data/gw_fresh_run/
+*.zip
+
+# === KEEP: plots only
+!results/plots/
+
+# === EXCLUDE: checkpoints and junk
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.~*
+*.swp
+*.bak
+.DS_Store
+Thumbs.db
+
+# === EXCLUDE: environments
+env/
+.venv/
+bruno-simulator-env/
+.gitattributes
+
+# === EXCLUDE: Git LFS internal cache
+.git/lfs/
