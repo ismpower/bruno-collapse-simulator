@@ -1,0 +1,37 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Physical constants
+a_rad = 7.5657e-16  # Radiation constant (J·m⁻³·K⁻⁴)
+kappa = 1313        # Bruno constant coefficient (1/K)
+V = 1.0             # Arbitrary volume (m³)
+
+# Temperature range
+T_vals = np.logspace(-6, 8, 200)  # From 1 µK to 1e8 K
+
+# Entropy equation (piecewise)
+S_vals = []
+for T in T_vals:
+    if kappa * T < 1:
+        S = (4/3) * a_rad * T**3 * V
+    else:
+        S = (4/3) * a_rad * T**3 * (V / (kappa * T))  # Surface projection
+    S_vals.append(S)
+
+# Plotting
+plt.figure(figsize=(10,6))
+plt.plot(T_vals, S_vals, label="Entropy vs Temperature (Collapse Surface)")
+plt.axvline(1 / kappa, color='red', linestyle='--', label="Collapse Threshold (β = 1)")
+plt.xscale('log')
+plt.yscale('log')
+plt.xlabel("Temperature (K)")
+plt.ylabel("Entropy (J/K)")
+plt.title("Entropy Collapse Surface Equation")
+plt.grid(True, which='both', linestyle='--')
+plt.legend()
+plt.tight_layout()
+
+# Save figure
+plt.savefig("D:/Entropy-Collapse-Research/Figures/Final/fig_bruno_fixed_volume_collapse.png")
+print("📁 Saved: fig_collapse_surface_eq.png")
+plt.show()

@@ -1,0 +1,37 @@
+import math
+
+# --- Constants ---
+kappa = 1313               # Bruno coefficient in 1/K
+T_core = 1e11              # Core temperature at bounce (K)
+R_sun = 6.957e8            # Radius of the Sun (m)
+R_pre_collapse = 35 * R_sun  # Pre-collapse star radius
+R_core = 10e3              # Collapsed core radius ~10 km in meters
+
+# --- Bruno Calculation Function ---
+def compute_bruno(radius_meters):
+    A = 4 * math.pi * radius_meters**2
+    V = (4/3) * math.pi * radius_meters**3
+    beta = A / V  # A/V = 3/R for spheres
+    return beta
+
+# --- Collapse Check Function ---
+def collapse_triggered(beta, T, kappa_val):
+    threshold = kappa_val * T
+    return beta >= threshold, threshold
+
+# --- Run for both phases ---
+phases = {
+    "Pre-Collapse Star": R_pre_collapse,
+    "Core Bounce (Collapsed)": R_core
+}
+
+print("\n===== Bruno Collapse Check for SN 1987A =====\n")
+for label, radius in phases.items():
+    beta = compute_bruno(radius)
+    triggered, threshold = collapse_triggered(beta, T_core, kappa)
+
+    print(f"{label}:")
+    print(f"  Radius         : {radius:.2e} m")
+    print(f"  Bruno Constant : β_B = {beta:.3e}")
+    print(f"  Collapse Threshold (κ·T): {threshold:.3e}")
+    print(f"  Collapse Triggered? {'YES ✅' if triggered else 'No ❌'}\n")

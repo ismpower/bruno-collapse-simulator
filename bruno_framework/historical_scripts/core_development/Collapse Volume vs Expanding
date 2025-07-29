@@ -1,0 +1,49 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+a_rad = 7.5657e-16  # Radiation constant (J·m⁻³·K⁻⁴)
+kappa = 1313        # Bruno coefficient (1/K)
+
+# Temperature range
+T_vals = np.logspace(-6, 8, 300)  # From 1 µK to 1e8 K
+
+# Model 1: Expanding Volume (V ∝ 1/T³)
+S_expanding = []
+for T in T_vals:
+    V = 1 / T**3  # Volume expands as temp drops
+    if kappa * T < 1:
+        S = (4/3) * a_rad * T**3 * V
+    else:
+        S = (4/3) * a_rad * T**3 * (V / (kappa * T))
+    S_expanding.append(S)
+
+# Model 2: Fixed Volume (V = constant)
+V_fixed = 1.0
+S_fixed = []
+for T in T_vals:
+    if kappa * T < 1:
+        S = (4/3) * a_rad * T**3 * V_fixed
+    else:
+        S = (4/3) * a_rad * T**3 * (V_fixed / (kappa * T))
+    S_fixed.append(S)
+
+# Plotting both
+plt.figure(figsize=(10,6))
+plt.plot(T_vals, S_expanding, label="Expanding Volume (V ∝ 1/T³)", color='blue')
+plt.plot(T_vals, S_fixed, label="Fixed Volume", color='orange', linestyle='--')
+plt.axvline(1 / kappa, color='red', linestyle='--', label="Collapse Threshold (β = 1)")
+
+plt.xscale('log')
+plt.yscale('log')
+plt.xlabel("Temperature (K)")
+plt.ylabel("Entropy (J/K)")
+plt.title("Entropy Collapse: Fixed vs Expanding Volume")
+plt.grid(True, which='both', linestyle='--')
+plt.legend()
+plt.tight_layout()
+
+# Save comparison figure
+plt.savefig("D:/Entropy-Collapse-Research/Figures/Final/fig_bruno_compare_volume_models.png")
+print("📁 Saved: fig_bruno_compare_volume_models.png")
+plt.show()
